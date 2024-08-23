@@ -1,0 +1,30 @@
+[
+    {
+      "room_id": "101",
+      "room_name": "Deluxe Room",
+      "room_type": "Single",
+      "room_price": "100",
+      "room_status": "Available"
+    },
+    {
+      "room_id": "102",
+      "room_name": "Executive Suite",
+      "room_type": "Double",
+      "room_price": "200",
+      "room_status": "Booked"
+    },
+    {
+      "room_id": "103",
+      "room_name": "Presidential Suite",
+      "room_type": "Suite",
+      "room_price": "500",
+      "room_status": "Available"
+    },
+    {
+      "room_id": "104",
+      "room_name": "Standard Room",
+      "room_type": "Single",
+      "room_price": "80",
+      "room_status": "Under Maintenance"
+    }
+  ]
