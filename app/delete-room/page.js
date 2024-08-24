@@ -1,12 +1,14 @@
 'use client';
 import { useState } from 'react';
-import Navbar from '../component/navbar/navbar.jsx';
+import Navbar from '../component/Navbar.jsx';
 import axios from 'axios';
 
 export default function DeleteRoom() {
     const [room_id, setRoom_id] = useState('');
     const [message, setMessage] = useState('');
 
+
+    //สร้าง function สำหรับลบห้องพัก
     const handleChange_deleteRoom = async (e) => {
         e.preventDefault();
 
@@ -28,24 +30,30 @@ export default function DeleteRoom() {
     return (
         <div>
             <Navbar />
-            <div>
-                <h1>Delete Room</h1>
-                <form onSubmit={handleChange_deleteRoom}>
+            <div class="bg-orange-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+                <h1 class="font-bold">ลบข้อมูล</h1>
+                <h1>กรุณาใส่เลขห้องที่ท่านต้องการลบ</h1>
+            </div>
+            <div className='w-1/2 mx-auto pt-10 text-center text-red-700 pb-4'>
+                <form onSubmit={handleChange_deleteRoom} class="bg-white rounded px-8 pt-6 pb-8 mb-4 shadow-2xl">
                     <div>
-                        <label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2">
                             Room ID:
                             <input
                                 type="text"
                                 value={room_id}
+                                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                                 onChange={(e) => setRoom_id(e.target.value)}
+                                placeholder='Delete Room ID'
                                 required
                             />
                         </label>
                     </div>
-                    <button type="submit">Delete Room</button>
+                    <button type="submit" className=' bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline'>Delete Room</button>
                 </form>
                 {message && <p>{message}</p>} {/* Display the message */}
             </div>
+            
         </div>
     );
 }

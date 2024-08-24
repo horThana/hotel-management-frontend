@@ -1,10 +1,11 @@
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import React from 'react'
 
 
 const navigation = [
-  { name: 'หน้าหลัก', href: '/home', current: true },
+  { name: 'หน้าหลัก', href: '/dashboard', current: true },
   { name: 'แสดงห้องทั้งหมด', href: '/room-management', current: false },
   { name: 'สร้างรายการใหม่', href: '/create-room', current: false },
   { name: 'แก้ไขรายการ', href: '/update-room', current: false },
@@ -15,9 +16,12 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+
 export default function Example() {
+
+
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+   <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -34,7 +38,7 @@ export default function Example() {
               <img
                 href="/home"
                 alt="Your Company"
-                src="https://e7.pngegg.com/pngimages/833/279/png-clipart-tokugawa-shogunate-mikawa-province-tokugawa-clan-mon-mito-branch-symbol-miscellaneous-leaf-thumbnail.png"
+                src="https://cdn4.iconfinder.com/data/icons/hotel-and-hotel-services-2/85/hotel_search_find_booking_magnifier-256.png"
                 className="h-8 w-auto"
               />
             </div>
@@ -125,3 +129,5 @@ export default function Example() {
     </Disclosure>
   )
 }
+
+    

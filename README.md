@@ -41,3 +41,4 @@ npm tailwaind on global project
 npm i @headlessui/react
 npm i @heroicons/react
 npm install -D @tailwindcss/forms
+npm i framer-motion

@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
-import Navbar from '../component/navbar/navbar.jsx';
+import Navbar from '../component/Navbar.jsx';
 import axios from 'axios';
+import { Footer } from '../component/Footer.jsx';
 
 export default function UpdateRoom() {
     const [room_id, setRoom_id] = useState('');
@@ -13,6 +14,7 @@ export default function UpdateRoom() {
     const [newdescription, setnewDescription] = useState('');
     const [message, setMessage] = useState('');
 
+    // Function สำหรับอัพเดทห้องพัก
     const handleUpdateRoom = async (e) => {
         e.preventDefault();
         try {
@@ -40,89 +42,102 @@ export default function UpdateRoom() {
     return (
         <div>
             <Navbar />
-            <div>
-                <h1>Employee Management This is Employee Page.</h1>
+            <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+                <h1 class="font-bold">กรุณากรอกข้อมูล</h1> 
+                <h1>เพื่อทำการแก้ไขรายการที่ท่านต้องการ</h1>
             </div>
-            <h1>แก้ไขห้องพัก</h1>
-            <div>
-                <form onSubmit={handleUpdateRoom}>
-                    <label>
+           
+            <div className='w-1/2 mx-auto pt-10'>
+                <form onSubmit={handleUpdateRoom} class="bg-white rounded px-8 pt-6 pb-8 mb-4 shadow-2xl">
+                    <div>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
                         Room ID:
                         <input
                             type="text"
                             name="room_id"
+                            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={room_id}
                             onChange={(e) => setRoom_id(e.target.value)}
                             required
                         />
                     </label>
                     <br />
-                    <label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
                         Room Name:
                         <input
                             type="text"
                             name="room_name"
+                            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newroom_name}
                             onChange={(e) => setnewRoom_name(e.target.value)}
                             required
                         />
                     </label>
                     <br />
-                    <label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
                         Room Type:
                         <input
                             type="text"
                             name="room_type"
+                            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newroom_type}
                             onChange={(e) => setnewRoom_type(e.target.value)}
                             required
                         />
                     </label>
                     <br />
-                    <label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
                         Room Price:
                         <input
                             type="number"
                             name="room_price"
+                            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newroom_price}
                             onChange={(e) => setnewRoom_price(e.target.value)}
                             required
                         />
                     </label>
                     <br />
-                    <label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
                         Room Status:
                         <input
                             type="text"
                             name="room_status"
+                            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newroom_status}
+                            
                             onChange={(e) => setnewRoom_status(e.target.value)}
                         />
                     </label>
                     <br />
-                    <label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
                         Image:
                         <input
                             type="text"
                             name="image"
+                            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newimage}
                             onChange={(e) => setnewImage(e.target.value)}
                         />
                     </label>
                     <br />
-                    <label>
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
                         Description:
                         <input
                             type="text"
                             name="description"
+                            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newdescription}
                             onChange={(e) => setnewDescription(e.target.value)}
                         />
                     </label>
-                    <button type="submit">Update Room</button>
+                    <button type="submit" className=' bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:shadow-outline'>Update Room</button>
+                    <a href='/dashboard' className='p-4 font-bold text-red-700' >Cancel</a>
+                    </div>
                 </form>
                 {message && <p>{message}</p>} {/* Display the message */}
             </div>
+            <Footer/>
         </div>
     );
 }

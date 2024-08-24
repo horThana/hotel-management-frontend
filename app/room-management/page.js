@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Navbar from '../component/navbar/navbar.jsx';
+import Navbar from '../component/Navbar.jsx';
 import axios from 'axios';
 
 //แสดงรายการห้องทั้งหมดในระบบ
