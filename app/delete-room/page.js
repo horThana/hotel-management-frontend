@@ -3,20 +3,19 @@ import { useState } from 'react';
 import Navbar from '../component/navbar/navbar.jsx';
 import axios from 'axios';
 
-export default function deleteRoom() {
-    const [_id, setId] = useState('');
-
+export default function DeleteRoom() {
+    const [room_id, setRoom_id] = useState('');
     const [message, setMessage] = useState('');
 
     const handleChange_deleteRoom = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await axios.delete(`http://localhost:5000/roomservice/delete-room/${_id}`);
+            const response = await axios.delete(`http://localhost:5000/roomservice/delete-room/${room_id}`);
 
             if (response.status === 200) {
                 console.log(response.data);
-                setMessage('Room deleted successfully: ' + response.data);
+                setMessage('Room deleted successfully');
             } else {
                 setMessage('Failed to delete room');
             }
@@ -37,8 +36,8 @@ export default function deleteRoom() {
                             Room ID:
                             <input
                                 type="text"
-                                value={_id}
-                                onChange={(e) => setId(e.target.value)}
+                                value={room_id}
+                                onChange={(e) => setRoom_id(e.target.value)}
                                 required
                             />
                         </label>
