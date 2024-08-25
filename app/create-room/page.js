@@ -1,9 +1,8 @@
 'use client';
 
 import Navbar from '../component/Navbar.jsx';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import axios from 'axios';
-import Router from 'next/router.js';
 import { Footer } from '../component/Footer.jsx';
 
 export default function createRoom() {
@@ -18,7 +17,7 @@ export default function createRoom() {
     });
 
     const [message, setMessage] = useState('');
-    const { navigate } = Router;
+  
     //function สำหรับเก็บข้อมูลที่กรอกเข้ามา
     const handleChange_createRoom = (e) => {
         setFormDataRoom({
