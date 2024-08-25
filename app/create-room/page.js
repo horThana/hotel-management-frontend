@@ -5,7 +5,7 @@ import { useState} from 'react';
 import axios from 'axios';
 import { Footer } from '../component/Footer.jsx';
 
-export default function createRoom() {
+export default function CreateRoom() {
     const [formDataRoom, setFormDataRoom] = useState({
         room_id: '',
         room_name: '',
