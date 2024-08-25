@@ -1,0 +1,26 @@
+@keyframes slide-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%); /* เลื่อนแค่ครึ่งเดียวเพราะเราซ้ำภาพเดิม */
+    }
+  }
+  
+  .container {
+    overflow: hidden; /* ซ่อนส่วนที่เกิน */
+    width: 100%; /* ทำให้ container กว้างเต็มพื้นที่ */
+  }
+  
+  .da {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    width: 200%; /* ความกว้างเป็นสองเท่าของ container */
+    animation: slide-left 10s linear infinite;
+  }
+  
+  .da img {
+    width: 25%; /* ความกว้างของแต่ละภาพ */
+  }
+  

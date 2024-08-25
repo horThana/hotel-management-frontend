@@ -31,7 +31,7 @@ export default function createRoom() {
     const handleSubmit_createRoom = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/roomservice/create-room', formDataRoom);
+            const response = await axios.post('https://depa-backend-three.vercel.app/roomservice/create-room', formDataRoom);
             if (response.status === 201) {
                 console.log(response.data);
                 setFormDataRoom({
@@ -57,13 +57,13 @@ export default function createRoom() {
     return (
         <div>
             <Navbar />
-            <div class="bg-orange-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
-                <h1 class="font-bold">กรุณากรอกข้อมูล</h1>
+            <div className="bg-orange-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
+                <h1 className="font-bold">กรุณากรอกข้อมูล</h1>
            
             <h1>เพื่อทำการสร้างรายการใหม่</h1>
             </div>
             <div className='w-1/2 mx-auto pt-10'>
-                <form onSubmit={handleSubmit_createRoom} class="bg-white rounded px-8 pt-6 pb-8 mb-4 shadow-2xl">
+                <form onSubmit={handleSubmit_createRoom} className="bg-white rounded px-8 pt-6 pb-8 mb-4 shadow-2xl">
                     <div className=''>
                     <label className="block text-gray-700 text-sm font-bold mb-2">
                         Room ID:
@@ -137,6 +137,7 @@ export default function createRoom() {
                             name="image"
                              className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={formDataRoom.image}
+                            placeholder='Image URL'
                             onChange={handleChange_createRoom}
                             
                         />
@@ -149,6 +150,7 @@ export default function createRoom() {
                             name="description"
                              className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={formDataRoom.description}
+                            placeholder='Description'
                             onChange={handleChange_createRoom}
                         />
                     </label>

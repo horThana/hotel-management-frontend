@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Navbar from '../component/Navbar.jsx';
 import axios from 'axios';
+import { Footer } from '../component/Footer.jsx';
 
 export default function DeleteRoom() {
     const [room_id, setRoom_id] = useState('');
@@ -13,7 +14,7 @@ export default function DeleteRoom() {
         e.preventDefault();
 
         try {
-            const response = await axios.delete(`http://localhost:5000/roomservice/delete-room/${room_id}`);
+            const response = await axios.delete(`https://depa-backend-three.vercel.app/roomservice/delete-room/${room_id}`);
 
             if (response.status === 200) {
                 console.log(response.data);
@@ -30,12 +31,12 @@ export default function DeleteRoom() {
     return (
         <div>
             <Navbar />
-            <div class="bg-orange-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
-                <h1 class="font-bold">ลบข้อมูล</h1>
+            <div className="bg-orange-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+                <h1 className="font-bold">ลบข้อมูล</h1>
                 <h1>กรุณาใส่เลขห้องที่ท่านต้องการลบ</h1>
             </div>
             <div className='w-1/2 mx-auto pt-10 text-center text-red-700 pb-4'>
-                <form onSubmit={handleChange_deleteRoom} class="bg-white rounded px-8 pt-6 pb-8 mb-4 shadow-2xl">
+                <form onSubmit={handleChange_deleteRoom} className="bg-white rounded px-8 pt-6 pb-8 mb-4 shadow-2xl">
                     <div>
                         <label className="block text-gray-700 text-sm font-bold mb-2">
                             Room ID:
@@ -53,7 +54,7 @@ export default function DeleteRoom() {
                 </form>
                 {message && <p>{message}</p>} {/* Display the message */}
             </div>
-            
+            <Footer/>
         </div>
     );
 }

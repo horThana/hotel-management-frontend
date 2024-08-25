@@ -18,7 +18,7 @@ export default function UpdateRoom() {
     const handleUpdateRoom = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put('http://localhost:5000/roomservice/update-room', {
+            const response = await axios.put('https://depa-backend-three.vercel.app/roomservice/update-room', {
                 room_id: room_id,
                 room_name: newroom_name,
                 room_type: newroom_type,
@@ -42,13 +42,13 @@ export default function UpdateRoom() {
     return (
         <div>
             <Navbar />
-            <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
-                <h1 class="font-bold">กรุณากรอกข้อมูล</h1> 
+            <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+                <h1 className="font-bold">กรุณากรอกข้อมูล</h1> 
                 <h1>เพื่อทำการแก้ไขรายการที่ท่านต้องการ</h1>
             </div>
            
             <div className='w-1/2 mx-auto pt-10'>
-                <form onSubmit={handleUpdateRoom} class="bg-white rounded px-8 pt-6 pb-8 mb-4 shadow-2xl">
+                <form onSubmit={handleUpdateRoom} className="bg-white rounded px-8 pt-6 pb-8 mb-4 shadow-2xl">
                     <div>
                     <label className="block text-gray-700 text-sm font-bold mb-2">
                         Room ID:
@@ -58,6 +58,7 @@ export default function UpdateRoom() {
                             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={room_id}
                             onChange={(e) => setRoom_id(e.target.value)}
+                            placeholder='Enter Room ID'
                             required
                         />
                     </label>
@@ -70,6 +71,7 @@ export default function UpdateRoom() {
                             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newroom_name}
                             onChange={(e) => setnewRoom_name(e.target.value)}
+                            placeholder='Enter name'
                             required
                         />
                     </label>
@@ -82,6 +84,7 @@ export default function UpdateRoom() {
                             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newroom_type}
                             onChange={(e) => setnewRoom_type(e.target.value)}
+                            placeholder='Enter type'
                             required
                         />
                     </label>
@@ -94,6 +97,7 @@ export default function UpdateRoom() {
                             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newroom_price}
                             onChange={(e) => setnewRoom_price(e.target.value)}
+                            placeholder='Enter price'
                             required
                         />
                     </label>
@@ -105,7 +109,7 @@ export default function UpdateRoom() {
                             name="room_status"
                             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newroom_status}
-                            
+                            placeholder='Available/Unavailable'
                             onChange={(e) => setnewRoom_status(e.target.value)}
                         />
                     </label>
@@ -117,6 +121,7 @@ export default function UpdateRoom() {
                             name="image"
                             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newimage}
+                            placeholder='Enter image URL'
                             onChange={(e) => setnewImage(e.target.value)}
                         />
                     </label>
@@ -128,6 +133,7 @@ export default function UpdateRoom() {
                             name="description"
                             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline grid justify-items-center'
                             value={newdescription}
+                            placeholder='Enter description'
                             onChange={(e) => setnewDescription(e.target.value)}
                         />
                     </label>

@@ -1,17 +1,38 @@
+import { Footer } from '../component/Footer';
 import Navbar from '../component/Navbar';
+import styles from './dashboard.module.css';
 
 const home = () => {
     return (
-        <div>
+        <div className="">
             <Navbar/>
-        <h1>Home</h1>
-        <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRWHQRT_0xG2UvD389c4ANgIxcHUugn7CrkA&s"
-            alt=""
-            className=""></img>
-        <p>Home page content</p>
+            <div className={styles.container}>
+                <div className={styles.da}>
+                    <img
+                        src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt=""
+                        className="rounded"
+                    />
+                    <img
+                        src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt=""
+                        className="rounded"
+                    />
+                    <img
+                        src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt=""
+                        className="rounded"
+                    />
+                    <img
+                        src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt=""
+                        className="rounded"
+                    />
+                </div>
+            </div>
+            <Footer/>
         </div>
-    )
+    );
 }
 
 export default home;
